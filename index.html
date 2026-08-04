@@ -112,8 +112,8 @@
 
   /* HERO */
   .hero{padding-top:88px; padding-bottom:100px; position:relative;}
-  .hero-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:64px; align-items:center;}
-  @media(max-width:940px){ .hero-grid{grid-template-columns:1fr; gap:56px;} }
+  .hero-center{max-width:780px; margin:0 auto; text-align:center;}
+  .hero-center .eyebrow{justify-content:center;}
   h1.hero-h{
     font-family:'Fraunces', serif;
     font-weight:600;
@@ -121,6 +121,7 @@
     line-height:1.08;
     letter-spacing:-0.01em;
     max-width:680px;
+    margin-left:auto; margin-right:auto;
   }
   h1.hero-h em{font-style:italic; font-weight:500; color:var(--gold-bright);}
   .hero-tagline{
@@ -131,8 +132,8 @@
     color:var(--sage-bright);
     margin-top:18px;
   }
-  .hero-sub{margin-top:24px; font-size:18px; color:var(--ink-dim); max-width:520px; line-height:1.75;}
-  .hero-actions{margin-top:36px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;}
+  .hero-sub{margin:24px auto 0; font-size:18px; color:var(--ink-dim); max-width:520px; line-height:1.75;}
+  .hero-actions{margin-top:36px; display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap;}
   .hero-note{font-size:13.5px; color:var(--ink-faint); font-family:'JetBrains Mono', monospace;}
 
   /* NOTIFICATION STREAM — signature element */
@@ -278,6 +279,11 @@
     display:inline-flex; align-items:center; gap:8px; margin-top:18px;
     font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--sage-bright);
   }
+  .mech-visual{margin-top:56px;}
+  .mech-visual-caption{
+    text-align:center; margin-top:18px;
+    font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--ink-faint); letter-spacing:.04em;
+  }
 
   .proof-strip{
     background:linear-gradient(135deg, var(--bg-raised) 0%, var(--bg-raised-2) 100%);
@@ -354,59 +360,14 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow">Για μικρές &amp; μεσαίες επιχειρήσεις</div>
-      <h1 class="hero-h">Φέραμε <em>242 νέες πεντάστερες κριτικές σε 30 μέρες</em> σε έναν μόνο πελάτη.</h1>
-      <p class="hero-tagline">Μία κακή κριτική διώχνει δεκάδες πελάτες. Εμείς σε κάνουμε την #1 επιλογή στην περιοχή σου.</p>
-      <p class="hero-sub">Οι περισσότεροι ευχαριστημένοι πελάτες δεν αφήνουν ποτέ κριτική — μόνο οι δυσαρεστημένοι το κάνουν. Το αποτέλεσμα: η βαθμολογία σου δείχνει τη χειρότερη μέρα σου, όχι τη συνηθισμένη.</p>
-      <div class="hero-actions">
-        <a href="#apply" class="btn btn-gold">Κάνε αίτηση για να σου εγκαταστήσουμε το σύστημα και στη δική σου επιχείρηση. <span class="btn-arrow">→</span></a>
-        <span class="hero-note">242 κριτικές σε 30 μέρες — πραγματικό case study</span>
-      </div>
-    </div>
-    <div>
-      <div class="phone">
-        <div class="phone-top">
-          <div>
-            <div class="phone-top-name">Google Business Profile</div>
-            <div class="phone-top-status">● live — νέες κριτικές μπαίνουν τώρα</div>
-          </div>
-          <div class="rating-badge">★ 4.9</div>
-        </div>
-        <div class="notif">
-          <div class="notif-icon">⭐</div>
-          <div>
-            <div class="notif-stars">★★★★★</div>
-            <div class="notif-text">"Άψογη εξυπηρέτηση, θα ξαναπάω σίγουρα!"</div>
-            <div class="notif-meta">Νέα κριτική Google · μόλις τώρα</div>
-          </div>
-        </div>
-        <div class="notif">
-          <div class="notif-icon">⭐</div>
-          <div>
-            <div class="notif-stars">★★★★★</div>
-            <div class="notif-text">"Πολύ επαγγελματίες, με εξυπηρέτησαν άμεσα."</div>
-            <div class="notif-meta">Νέα κριτική Google · πριν 6 λεπτά</div>
-          </div>
-        </div>
-        <div class="notif">
-          <div class="notif-icon">⭐</div>
-          <div>
-            <div class="notif-stars">★★★★★</div>
-            <div class="notif-text">"Το προτείνω ανεπιφύλακτα σε όλους!"</div>
-            <div class="notif-meta">Νέα κριτική Google · πριν 19 λεπτά</div>
-          </div>
-        </div>
-        <div class="notif">
-          <div class="notif-icon">⭐</div>
-          <div>
-            <div class="notif-stars">★★★★★</div>
-            <div class="notif-text">"Καλύτερη εμπειρία από ό,τι περίμενα."</div>
-            <div class="notif-meta">Νέα κριτική Google · πριν 41 λεπτά</div>
-          </div>
-        </div>
-      </div>
+  <div class="wrap hero-center">
+    <div class="eyebrow">Για μικρές &amp; μεσαίες επιχειρήσεις</div>
+    <h1 class="hero-h">Φέραμε <em>242 νέες πεντάστερες κριτικές σε 30 μέρες</em> σε έναν μόνο πελάτη.</h1>
+    <p class="hero-tagline">Μία κακή κριτική διώχνει δεκάδες πελάτες. Εμείς σε κάνουμε την #1 επιλογή στην περιοχή σου.</p>
+    <p class="hero-sub">Οι περισσότεροι ευχαριστημένοι πελάτες δεν αφήνουν ποτέ κριτική — μόνο οι δυσαρεστημένοι το κάνουν. Το αποτέλεσμα: η βαθμολογία σου δείχνει τη χειρότερη μέρα σου, όχι τη συνηθισμένη.</p>
+    <div class="hero-actions">
+      <a href="#apply" class="btn btn-gold">Κάνε αίτηση για να σου εγκαταστήσουμε το σύστημα και στη δική σου επιχείρηση. <span class="btn-arrow">→</span></a>
+      <span class="hero-note">242 κριτικές σε 30 μέρες — πραγματικό case study</span>
     </div>
   </div>
 </section>
@@ -517,6 +478,50 @@
         <div class="mech-body">Οι περισσότεροι πελάτες σκοπεύουν να αφήσουν κριτική και το ξεχνάνε. Το σύστημα στέλνει αυτόματη υπενθύμιση στη σωστή στιγμή — και παρακολουθεί ποιες κριτικές ολοκληρώθηκαν, χωρίς να χρειάζεται εσύ να θυμάσαι κανέναν.</div>
         <div class="mech-flag">✓ 100% αυθεντικές κριτικές, από πραγματικούς πελάτες σου</div>
       </div>
+    </div>
+    <div class="mech-visual">
+      <div class="phone">
+        <div class="phone-top">
+          <div>
+            <div class="phone-top-name">Google Business Profile</div>
+            <div class="phone-top-status">● live — νέες κριτικές μπαίνουν τώρα</div>
+          </div>
+          <div class="rating-badge">★ 4.9</div>
+        </div>
+        <div class="notif">
+          <div class="notif-icon">⭐</div>
+          <div>
+            <div class="notif-stars">★★★★★</div>
+            <div class="notif-text">"Άψογη εξυπηρέτηση, θα ξαναπάω σίγουρα!"</div>
+            <div class="notif-meta">Νέα κριτική Google · μόλις τώρα</div>
+          </div>
+        </div>
+        <div class="notif">
+          <div class="notif-icon">⭐</div>
+          <div>
+            <div class="notif-stars">★★★★★</div>
+            <div class="notif-text">"Πολύ επαγγελματίες, με εξυπηρέτησαν άμεσα."</div>
+            <div class="notif-meta">Νέα κριτική Google · πριν 6 λεπτά</div>
+          </div>
+        </div>
+        <div class="notif">
+          <div class="notif-icon">⭐</div>
+          <div>
+            <div class="notif-stars">★★★★★</div>
+            <div class="notif-text">"Το προτείνω ανεπιφύλακτα σε όλους!"</div>
+            <div class="notif-meta">Νέα κριτική Google · πριν 19 λεπτά</div>
+          </div>
+        </div>
+        <div class="notif">
+          <div class="notif-icon">⭐</div>
+          <div>
+            <div class="notif-stars">★★★★★</div>
+            <div class="notif-text">"Καλύτερη εμπειρία από ό,τι περίμενα."</div>
+            <div class="notif-meta">Νέα κριτική Google · πριν 41 λεπτά</div>
+          </div>
+        </div>
+      </div>
+      <div class="mech-visual-caption">Έτσι μπαίνουν οι κριτικές, μία-μία.</div>
     </div>
   </div>
 </section>
