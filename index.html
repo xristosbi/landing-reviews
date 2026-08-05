@@ -194,13 +194,15 @@
 
   /* VSL */
   .vsl-box{
-    aspect-ratio:16/9;
+    position:relative;
+    width:100%;
+    padding-top:56.25%; /* 16:9 without relying on aspect-ratio support */
     background:var(--bg-raised);
     border:1px solid var(--hairline);
     border-radius:var(--radius);
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    gap:16px; text-align:center;
+    overflow:hidden;
   }
+  .vsl-box iframe{position:absolute; top:0; left:0;}
   .vsl-play{
     width:64px; height:64px; border-radius:50%;
     background:linear-gradient(180deg, var(--gold-bright), var(--gold));
