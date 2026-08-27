@@ -395,7 +395,7 @@
 <section id="calc">
   <div class="wrap">
     <div class="eyebrow">Ο υπολογιστής</div>
-    <h2 class="section-h">Σε πόσους μήνες ξεπερνάς τον ανταγωνιστή σου στο Google;</h2>
+    <h2 class="section-h">Σε πόσους μήνες φτάνεις τον στόχο σου στις κριτικές;</h2>
     <p class="section-sub">Δες τη σημερινή σου κατάσταση, την ιδανική με το σύστημα, και πόσο χρόνο κερδίζεις.</p>
 
     <div class="rvc" style="margin-top:32px;">
@@ -409,12 +409,12 @@
       <div class="rvc-card">
         <div class="rvc-comparison" id="rvc-comparison-view">
           <div class="rvc-comp-box">
-            <div class="rvc-comp-title">Σήμερα (μήνες μέχρι να ξεπεράσεις)</div>
+            <div class="rvc-comp-title">Σήμερα (μήνες μέχρι τον στόχο)</div>
             <div class="rvc-comp-val" style="color:var(--wine-bright);" id="rvc-comp-curr">—</div>
             <div class="rvc-comp-sub" id="rvc-comp-curr-sub"></div>
           </div>
           <div class="rvc-comp-box">
-            <div class="rvc-comp-title">Με το σύστημα (μήνες μέχρι να ξεπεράσεις)</div>
+            <div class="rvc-comp-title">Με το σύστημα (μήνες μέχρι τον στόχο)</div>
             <div class="rvc-comp-val" style="color:var(--sage-bright);" id="rvc-comp-opt">—</div>
             <div class="rvc-comp-sub" id="rvc-comp-opt-sub"></div>
           </div>
@@ -436,22 +436,22 @@
 
             <div class="rvc-input" id="rvc-group-walkins" onclick="rvcSetField('walkins')">
               <div class="rvc-label"><span>Πόσα άτομα μπαίνουν στο μαγαζί/μήνα;</span><span class="rvc-val" id="rvc-val-walkins">300</span></div>
-              <input type="range" min="50" max="2000" value="300" step="10" id="rvc-slider-walkins">
+              <input type="range" min="10" max="3000" value="300" step="1" id="rvc-slider-walkins">
             </div>
 
             <div class="rvc-input" id="rvc-group-ratioCurrent" onclick="rvcSetField('ratioCurrent')">
               <div class="rvc-label"><span>Σήμερα, 1 στους πόσους αφήνει κριτική;</span><span class="rvc-val" id="rvc-val-ratioCurrent">1 στους 300</span></div>
-              <input type="range" min="50" max="1000" value="300" step="10" id="rvc-slider-ratioCurrent">
+              <input type="range" min="5" max="1000" value="300" step="5" id="rvc-slider-ratioCurrent">
             </div>
 
-            <div class="rvc-input" id="rvc-group-competitorReviews" onclick="rvcSetField('competitorReviews')" style="display:none;">
-              <div class="rvc-label"><span>Πόσες κριτικές έχει ο ανταγωνιστής-στόχος;</span><span class="rvc-val" id="rvc-val-competitorReviews">500</span></div>
-              <input type="range" min="0" max="5000" value="500" step="10" id="rvc-slider-competitorReviews">
+            <div class="rvc-input" id="rvc-group-targetReviews" onclick="rvcSetField('targetReviews')" style="display:none;">
+              <div class="rvc-label"><span>Πόσες επιπλέον κριτικές θέλεις να αποκτήσεις;</span><span class="rvc-val" id="rvc-val-targetReviews">100</span></div>
+              <input type="range" min="10" max="1000" value="100" step="10" id="rvc-slider-targetReviews">
             </div>
 
             <div class="rvc-input" id="rvc-group-ratioNew" onclick="rvcSetField('ratioNew')" style="display:none;">
               <div class="rvc-label"><span>Με το σύστημα, 1 στους πόσους θα αφήνει κριτική;</span><span class="rvc-val" id="rvc-val-ratioNew">1 στους 20</span></div>
-              <input type="range" min="5" max="100" value="20" step="1" id="rvc-slider-ratioNew">
+              <input type="range" min="2" max="100" value="20" step="1" id="rvc-slider-ratioNew">
             </div>
           </div>
 
@@ -462,6 +462,7 @@
               <div class="rvc-static-row"><span>Μηνιαία συνδρομή</span><span class="rvc-static-val">€20/μήνα</span></div>
             </div>
             <p class="rvc-static-note">Ένα μόνο πακέτο τιμής — δεν χρειάζεται να διαλέξεις κάτι.</p>
+            <button class="rvc-mini-btn" onclick="rvcSetFikaPreset()">Σαν τη Ζωή Φίκα</button>
           </div>
         </div>
 
@@ -526,6 +527,8 @@
   .rvc-static-row{display:flex;justify-content:space-between;padding:4px 0;font-size:13px;color:var(--ink-dim);}
   .rvc-static-val{font-family:'JetBrains Mono',monospace;color:var(--gold-bright);font-weight:700;}
   .rvc-static-note{font-size:11px;color:var(--ink-faint);margin-top:8px;}
+  .rvc-mini-btn{display:block;width:100%;margin-top:12px;background:var(--bg-raised-2);border:1px solid var(--hairline);color:var(--gold-bright);font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;padding:9px 14px;border-radius:20px;cursor:pointer;}
+  .rvc-mini-btn:hover{border-color:var(--gold);background:rgba(227,167,62,0.08);}
   .rvc-bottom{display:grid;grid-template-columns:220px 1fr;gap:16px;border-top:1px dashed var(--hairline);padding-top:18px;}
   @media(max-width:820px){.rvc-bottom{grid-template-columns:1fr;}}
   .rvc-keypad{background:var(--bg);border:1px solid var(--hairline);border-radius:12px;padding:12px;display:flex;flex-direction:column;justify-content:center;}
@@ -564,15 +567,15 @@
 
   const state = {
     currentReviews:100, walkins:300, ratioCurrent:300,
-    competitorReviews:500, ratioNew:20
+    targetReviews:100, ratioNew:20
   };
 
   const fields = {
     currentReviews:{el:$('rvc-slider-currentReviews'),min:0,max:2000,label:'Κριτικές τώρα'},
-    walkins:{el:$('rvc-slider-walkins'),min:50,max:2000,label:'Walk-ins/μήνα'},
-    ratioCurrent:{el:$('rvc-slider-ratioCurrent'),min:50,max:1000,label:'Σημερινό ποσοστό'},
-    competitorReviews:{el:$('rvc-slider-competitorReviews'),min:0,max:5000,label:'Κριτικές ανταγωνιστή'},
-    ratioNew:{el:$('rvc-slider-ratioNew'),min:5,max:100,label:'Νέο ποσοστό'}
+    walkins:{el:$('rvc-slider-walkins'),min:10,max:3000,label:'Walk-ins/μήνα'},
+    ratioCurrent:{el:$('rvc-slider-ratioCurrent'),min:5,max:1000,label:'Σημερινό ποσοστό'},
+    targetReviews:{el:$('rvc-slider-targetReviews'),min:10,max:1000,label:'Στόχος κριτικών'},
+    ratioNew:{el:$('rvc-slider-ratioNew'),min:2,max:100,label:'Νέο ποσοστό'}
   };
 
   window.rvcSetField = function(k){
@@ -617,12 +620,12 @@
     s.currentReviews=+$('rvc-slider-currentReviews').value;
     s.walkins=+$('rvc-slider-walkins').value;
     s.ratioCurrent=+$('rvc-slider-ratioCurrent').value;
-    s.competitorReviews=+$('rvc-slider-competitorReviews').value;
+    s.targetReviews=+$('rvc-slider-targetReviews').value;
     s.ratioNew=+$('rvc-slider-ratioNew').value;
 
     const currentReviewsPerMonth = Math.max(0, Math.round(s.walkins/s.ratioCurrent));
     const newReviewsPerMonth = Math.max(0, Math.round(s.walkins/s.ratioNew));
-    const gap = Math.max(0, s.competitorReviews - s.currentReviews);
+    const gap = s.targetReviews;
     const monthsCurrent = currentReviewsPerMonth>0 ? Math.ceil(gap/currentReviewsPerMonth) : Infinity;
     const monthsOptimal = newReviewsPerMonth>0 ? Math.ceil(gap/newReviewsPerMonth) : Infinity;
     const monthsSaved = isFinite(monthsCurrent) ? (monthsCurrent-monthsOptimal) : (isFinite(monthsOptimal) ? 'πολλούς' : 0);
@@ -646,15 +649,15 @@
     if(tab==='current'){
       $('rvc-col1-title').innerText='1. Κριτικές & walk-ins';
       show('rvc-group-currentReviews','block'); show('rvc-group-walkins','block'); show('rvc-group-ratioCurrent','block');
-      show('rvc-group-competitorReviews','none'); show('rvc-group-ratioNew','none'); costCol.style.display='none';
+      show('rvc-group-targetReviews','none'); show('rvc-group-ratioNew','none'); costCol.style.display='none';
       $('rvc-results-title').innerText='Σύνοψη (σημερινή κατάσταση)';
       rvcSetField('currentReviews');
     } else {
-      $('rvc-col1-title').innerText='1. Στόχος & νέο ποσοστό';
+      $('rvc-col1-title').innerText='1. Ο στόχος σου';
       show('rvc-group-currentReviews','none'); show('rvc-group-walkins','none'); show('rvc-group-ratioCurrent','none');
-      show('rvc-group-competitorReviews','block'); show('rvc-group-ratioNew','block'); costCol.style.display='flex';
+      show('rvc-group-targetReviews','block'); show('rvc-group-ratioNew','block'); costCol.style.display='flex';
       $('rvc-results-title').innerText='Σύνοψη (ιδανική κατάσταση)';
-      rvcSetField('competitorReviews');
+      rvcSetField('targetReviews');
     }
     calc();
   };
@@ -664,17 +667,17 @@
     $('rvc-val-currentReviews').innerText=m.currentReviews;
     $('rvc-val-walkins').innerText=m.walkins;
     $('rvc-val-ratioCurrent').innerText='1 στους '+m.ratioCurrent;
-    $('rvc-val-competitorReviews').innerText=m.competitorReviews;
+    $('rvc-val-targetReviews').innerText=m.targetReviews;
     $('rvc-val-ratioNew').innerText='1 στους '+m.ratioNew;
 
     if(activeTab==='current'){
       $('rvc-lbl-1').innerText='Νέες κριτικές/μήνα σήμερα'; $('rvc-res-1').innerText=m.currentReviewsPerMonth; $('rvc-sub-1').innerText='';
-      $('rvc-lbl-2').innerText='Μήνες μέχρι να ξεπεράσεις'; $('rvc-res-2').innerText=fmtMonths(m.monthsCurrent); $('rvc-sub-2').innerText='τον ανταγωνιστή-στόχο';
-      $('rvc-breakdown').innerText = m.walkins+' walk-ins/μήνα ÷ 1 στους '+m.ratioCurrent+' = '+m.currentReviewsPerMonth+' νέες κριτικές/μήνα. Απόσταση από τον ανταγωνιστή: '+m.gap+' κριτικές. Με αυτόν τον ρυθμό: '+fmtMonths(m.monthsCurrent)+'.';
+      $('rvc-lbl-2').innerText='Μήνες μέχρι τον στόχο'; $('rvc-res-2').innerText=fmtMonths(m.monthsCurrent); $('rvc-sub-2').innerText='τον στόχο';
+      $('rvc-breakdown').innerText = m.walkins+' walk-ins/μήνα ÷ 1 στους '+m.ratioCurrent+' = '+m.currentReviewsPerMonth+' νέες κριτικές/μήνα. Στόχος: '+m.targetReviews+' επιπλέον κριτικές. Με αυτόν τον ρυθμό: '+fmtMonths(m.monthsCurrent)+'.';
     } else if(activeTab==='optimal'){
       $('rvc-lbl-1').innerText='Νέες κριτικές/μήνα με το σύστημα'; $('rvc-res-1').innerText=m.newReviewsPerMonth; $('rvc-sub-1').innerText='';
-      $('rvc-lbl-2').innerText='Μήνες μέχρι να ξεπεράσεις'; $('rvc-res-2').innerText=fmtMonths(m.monthsOptimal); $('rvc-sub-2').innerText='τον ανταγωνιστή-στόχο';
-      $('rvc-breakdown').innerText = m.walkins+' walk-ins/μήνα ÷ 1 στους '+m.ratioNew+' = '+m.newReviewsPerMonth+' νέες κριτικές/μήνα. Απόσταση από τον ανταγωνιστή: '+m.gap+' κριτικές. Με το σύστημα: '+fmtMonths(m.monthsOptimal)+'.';
+      $('rvc-lbl-2').innerText='Μήνες μέχρι τον στόχο'; $('rvc-res-2').innerText=fmtMonths(m.monthsOptimal); $('rvc-sub-2').innerText='τον στόχο';
+      $('rvc-breakdown').innerText = m.walkins+' walk-ins/μήνα ÷ 1 στους '+m.ratioNew+' = '+m.newReviewsPerMonth+' νέες κριτικές/μήνα. Στόχος: '+m.targetReviews+' επιπλέον κριτικές. Με το σύστημα: '+fmtMonths(m.monthsOptimal)+'.';
     }
   }
 
@@ -693,13 +696,20 @@
     } else {
       $('rvc-row-note').style.display='none';
     }
-    $('rvc-breakdown').innerText = 'Σήμερα: '+fmtMonths(m.monthsCurrent)+'. Με το σύστημα: '+fmtMonths(m.monthsOptimal)+'.';
+    const multiplier = Math.round(m.newReviewsPerMonth/Math.max(1,m.currentReviewsPerMonth));
+    $('rvc-breakdown').innerText = 'Αν δεν ξεκινήσεις, παίρνεις μόνο '+m.currentReviewsPerMonth+' κριτικές/μήνα. Με το σύστημα, παίρνεις '+m.newReviewsPerMonth+' κριτικές/μήνα — '+multiplier+'x περισσότερες.';
   }
 
   const origSwitch = window.rvcSwitchTab;
   window.rvcSwitchTab = function(tab){
     origSwitch(tab);
     if(tab==='compare') updateComparison();
+  };
+
+  window.rvcSetFikaPreset = function(){
+    $('rvc-slider-walkins').value = 650;
+    $('rvc-slider-ratioNew').value = 3;
+    calc();
   };
 
   rvcSwitchTab('current');
